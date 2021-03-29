@@ -6,8 +6,11 @@
     "type": "project",
     "require": {
         "php": ">=5.6.4",
+        "barryvdh/laravel-ide-helper": "^2.4",
+        "kris/laravel-form-builder": "1.12.1",
         "laravel/framework": "5.4.*",
-        "laravel/tinker": "~1.0"
+        "laravel/tinker": "~1.0",
+        "patricktalmadge/bootstrapper": "5.10.2"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
@@ -19,7 +22,7 @@
             "database"
         ],
         "psr-4": {
-            "App\\": "app/"
+            "SON\\": "app/"
         }
     },
     "autoload-dev": {
@@ -35,13 +38,13 @@
             "php artisan key:generate"
         ],
         "post-install-cmd": [
-            "Illuminate\\Foundation\\ComposerScripts::postInstall",
+            "Illuminate\\Foundation\\ComposerScripts::postInstall", 
             "php artisan ide-helper:generate",
-            "php artisan ide-helper:meta",
+            "php artisan ide-helper:meta",         
             "php artisan optimize"
         ],
         "post-update-cmd": [
-            "Illuminate\\Foundation\\ComposerScripts::postUpdate",
+            "Illuminate\\Foundation\\ComposerScripts::postUpdate",            
             "php artisan ide-helper:generate",
             "php artisan ide-helper:meta",
             "php artisan optimize"
