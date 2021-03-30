@@ -11,7 +11,7 @@
 
         {!! Button::primary(Icon::pencil().' Editar')->asLinkTo($linkEdit) !!}
         {!! 
-        Button::danger(Icon::remove().' Excluir')->asLinkTo($linkDelete)
+        Button::danger('Excluir')->asLinkTo($linkDelete)
             ->addAttributes([
                 'onclick' => "event.preventDefault();document.getElementById(\"form-delete\").submit();"
             ])
