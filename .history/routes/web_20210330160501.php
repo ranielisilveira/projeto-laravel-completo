@@ -15,17 +15,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::prefix('admin')->group(function (){
+Route::prefix('admin')->group(function () {
     Auth::routes();
 
     Route::group([
         'namespace' => 'Admin\\',
         'as' => 'admin.',
         'middleware' => 'auth'
-    ], function (){
-        Route::name('dashboard')->get('/dashboard', function () {
-            return 'Estou no dashboard';
-        });
+    ], function () {
+        Route::name('dashboard')get('/dashboard', function () {
+            return "Estou no dashboard";
         Route::resource('users', 'UsersController');
     });
 });

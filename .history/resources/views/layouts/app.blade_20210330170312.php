@@ -49,8 +49,11 @@
             }
         @endphp
         {!! $navbar !!}
+
+        @if(Auth::check())
         {!! form($formLogout) !!}
-        
+        @endif        
+
         @yield('content')
     </div>
 
