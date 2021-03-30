@@ -49,12 +49,12 @@
             }
         @endphp
         {!! $navbar !!}
+
+        @if(Auth::check())
         {!! form($formLogout) !!}
-        @if(Session::has('message'))
-        <div class="container">
-            {!! Alert::success(Session::get('message'))->close() !!}
-        </div>
-    @endif
+        @endif        
+
+
         @yield('content')
     </div>
 

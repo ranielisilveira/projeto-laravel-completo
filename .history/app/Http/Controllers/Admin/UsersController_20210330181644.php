@@ -42,24 +42,24 @@ class UsersController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-{
-    /** @var Form $form */
-    $form = \FormBuilder::create(UserForm::class);
+    {
+        $form = \FormBuilder::create(UserForm::class);
 
-    if(!$form->isValid()){
-        return redirect()
+        if(!$form->isValid()){
+            return redirect()
             ->back()
             ->withErrors($form->getErrors())
             ->withInput();
-    }
 
-    $data = $form->getFieldValues();
-    $password = str_random(6);
-    $data['password'] = $password;
-    User::create($data);
-    $request->session()->flash('message', 'Usuário criado com sucesso');
-    return redirect()->route('admin.users.index');
-}
+        }
+
+        $data = $form->getFieldValues();
+        $password = str_random(6);
+        $data['password'] = $password;
+        User::create($data);
+        $request->session()->flash('message', 'Usuário criado com sucesso');
+        return redirect()->route('admin.users.index');
+    }
 
     /**
      * Display the specified resource.
@@ -111,9 +111,9 @@ class UsersController extends Controller
 
         $data = $form->getFieldValues();
         $user->update($data);
-        session()->flash('message', 'Usuário editado com sucesso');
+
         return redirect()->route('admin.users.index');
-    }
+}
 
     /**
      * Remove the specified resource from storage.
@@ -124,8 +124,6 @@ class UsersController extends Controller
     public function destroy(User $user)
     {
         $user->delete();
-        session()->flash('message', 'Usuário excluído com sucesso');
-
         return redirect()->route('admin.users.index');
     }
 }

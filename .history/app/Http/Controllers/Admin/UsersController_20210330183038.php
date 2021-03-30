@@ -111,9 +111,9 @@ class UsersController extends Controller
 
         $data = $form->getFieldValues();
         $user->update($data);
-        session()->flash('message', 'Usuário editado com sucesso');
+
         return redirect()->route('admin.users.index');
-    }
+}
 
     /**
      * Remove the specified resource from storage.
@@ -124,8 +124,6 @@ class UsersController extends Controller
     public function destroy(User $user)
     {
         $user->delete();
-        session()->flash('message', 'Usuário excluído com sucesso');
-
         return redirect()->route('admin.users.index');
     }
 }

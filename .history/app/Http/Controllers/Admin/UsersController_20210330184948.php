@@ -113,7 +113,7 @@ class UsersController extends Controller
         $user->update($data);
         session()->flash('message', 'Usuário editado com sucesso');
         return redirect()->route('admin.users.index');
-    }
+}
 
     /**
      * Remove the specified resource from storage.
