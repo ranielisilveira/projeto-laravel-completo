@@ -2,10 +2,10 @@
 
 namespace SON\Http\Controllers\Auth;
 
-use SON\User;
 use SON\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use SON\Models\User;
 
 class RegisterController extends Controller
 {

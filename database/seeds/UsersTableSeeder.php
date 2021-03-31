@@ -1,8 +1,9 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use SON\Models\User;
 
-class UserTableSeeder extends Seeder
+class UsersTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,8 +12,10 @@ class UserTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(\SON\User::class)->create([
-            'email' => 'admin@users.com'
+        User::create([        
+            'email' => 'admin@user.com',
+            'password' => Hash::make('123456'),
+            'enrolment' => 100001
         ]);
     }
 }
